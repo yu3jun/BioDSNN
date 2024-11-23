@@ -111,10 +111,8 @@ class BioDSNN:
     def write_log(self, message, log_file_path=None):
         """Write log messages to a file."""
         if log_file_path is None:
-            # 构建日志文件的默认路径
             base_path = "./runs/BioDSNN/" + self.data_name + "/" + self.split + "/" + formatted_time
             log_file_path = os.path.join(base_path, "model_log.txt")
-            # 确保路径存在
             os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
         
         with open(log_file_path, "a") as log_file:
